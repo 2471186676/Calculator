@@ -1,7 +1,7 @@
 
 
 body{
-    background-color: antiquewhite;
+    background-color: aliceblue;
     text-align: center;
     font-family:'Courier New', Courier, monospace;
 }
@@ -14,13 +14,16 @@ body{
     border: solid;
     width: 500px;
     padding: 20px;
+    background-color:tan;
+    margin: auto;
+    border-radius: 10px;
 }
-
+/* screen */
 .header{
     font-size:large;
-    background-color: aliceblue;
     margin: 1px;
 }
+
 
 .display{
     display: flex;
@@ -32,6 +35,7 @@ body{
     width: 100%;
     height: auto;
     margin-bottom: 20px;
+    background-color: lightgray;
 }
 
 #operation{
@@ -43,6 +47,25 @@ body{
     font-size: 50px;
     padding-top: 20px;
     padding-left:  5%;
+}
+
+/* operation */
+.button{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    border: solid;
+    border-width: 2px;
+}
+
+button{
+    width: 25%;
+    height: 130px;
+    background-color:tomato;
+    border: solid;
+    border-width: 1px;
 }
 
 
