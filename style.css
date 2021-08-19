@@ -47,10 +47,11 @@ body{
     font-size: 50px;
     padding-top: 20px;
     padding-left:  5%;
+    overflow: auto;
 }
 
 /* operation */
-.button{
+.buttons{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
