@@ -55,12 +55,37 @@ function action(input)
 
 function action(input)
 {
+    /* should have been one big switch, too late to change now */
+
     let continues = true;
+    /* check if input is clear*/
+    if(input == 'C')
+    {
+        operate = ["","",""];
+        current = 0;
+        operation.innerHTML = "";
+    }
+
+    /* check if input is remove*/
+    if(input == 'R')
+    {
+        if(operate[current] == "" && current != 0)
+             current--;
+
+        let split = operate[current].toString().split("");
+        operate[current] = "";
+
+        for(let i = 0; i < split.length-1; i++)
+        {
+            operate[current] += split[i];
+        }
+    }
+
+    /* check if input is Number */
     for(let i = 0; i < num_array.length; i++)
     {
         if(num_array[i] == input)
         {
-            console.log("number");
             operate[current] += input;
             continues = false;
 
@@ -68,9 +93,10 @@ function action(input)
         }
     }
 
+    /* if not a number, continue check for if operator*/
     if(continues)
     {
-        for(let i = 0; i < num_array.length; i++)
+        for(let i = 0; i < oper_array.length; i++)
         {
             if(input == '=')
             {
@@ -86,9 +112,10 @@ function action(input)
                 i = num_array.length + 1;  /* stop loop when opperate action is done */
             }
 
-            else if(input == oper_array[i])
+            if(input == oper_array[i])
             {
                 console.log("operate");
+                /* max pair reach, calculate answer*/
                 if(current == 2)
                 {
                     let answer = answer(operate[0], operate[2], operate[1]);
@@ -100,6 +127,9 @@ function action(input)
 
                 else
                 {
+                    if(operate[current] == "")
+                        operate[current] = "0";
+
                     current++;
                     operate[current] = input;
                     current++;
@@ -108,13 +138,10 @@ function action(input)
                 i = num_array.length + 1;  /* stop loop when opperate action is done */
             }
         }
-    }   
-
-
+    }  
     console.log(operate);
     console.log(current);
     show_onscreen(operate);
-
 }
 
 function answer(num1, num2, inOp)
