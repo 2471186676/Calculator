@@ -20,41 +20,6 @@ buttons.forEach((button) =>{
 
 function action(input)
 {
-    console.log(input);
-    num_array.forEach((num) =>{
-        if(input == num)
-            operate[current] += Number(input);
-            show(operate);
-    })
-
-    oper_array.forEach((oper) =>{
-        console.log(input);
-        if(input == oper && input != '=')
-        {
-            if(current != 2)
-            {
-                current ++;
-                operate[current] = input;
-                current ++;
-                show(operate);
-            }
-        }
-        else if(input === '=')
-        {
-            let result = answer(operate[0], operate[2], operate[1]);
-            operation.innerHTML = result;
-            operate[0] = result;
-            operate[1] = "";
-            operate[2] = ""
-            current = 1;
-            number.innerHTML = "_";
-
-        }
-    })
-}
-
-function action(input)
-{
     /* should have been one big switch, too late to change now */
 
     let continues = true;
